@@ -1,0 +1,185 @@
+﻿<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html">
+  <title>吃瓜 - 富人消费，穷人吃瓜</title>
+  <meta name="author" content="Jake Rocheleau">
+  <link rel="stylesheet" type="text/css" media="all" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" media="all" href="css/bootstrap-glyphicons.css">
+  <link rel="stylesheet" type="text/css" media="all" href="css/styles.css">
+  <link rel="stylesheet" type="text/css" href="css/search.css">
+  <link rel="stylesheet" type="text/css" href="css/customPage.css">
+
+  <script type="text/javascript" src="js/jquery-1.11.2.js"></script>
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/keyword.js"></script>
+  <script type="text/javascript" src="js/customPage.js"></script>
+
+  <script type="text/javascript" src="js/data.js"></script>
+  <script src="js/echarts.min.js"></script>
+  <script src="js/graph.js"></script>
+  <script src="js/index.js"></script>
+
+</head>
+
+<body>
+
+<div class="container-fluid">
+  <header class="page-header">
+    <div id="search_bg">
+      <div id="button_bg">
+        <span class="changetype"></span>
+        <div class="row">
+          <!--<input type="text" value="" lang="zh-CN" placeholder="请输入关键词" name="wd" class="textb form-control" autocomplete="off" id="input">-->
+          <div class="col-md-5">
+            <div class="input-group" >
+              <input type="text" class="form-control" id="input" name="wd" value="" autocomplete="off">
+              <input type="text" class="hidden" id="senti-input" value="0">
+              <div class="input-group-btn">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="senti-btn">All<span class="caret"></span></button>
+                <ul class="dropdown-menu dropdown-menu-right" id="senti-list">
+                  <li><a href="javascript:void(0)" data-value="0">All</a></li>
+                  <li><a href="javascript:void(0)" data-value="1">Positive</a></li>
+                  <li><a href="javascript:void(0)" data-value="-1">Negative</a></li>
+                </ul>
+              </div><!-- /btn-group -->
+            </div><!-- /input-group -->
+          </div>
+          <input type="button" name="sub" value="搜索" class="subb btn btn-primary" id="keyword-search-btn">
+          <!--<select>-->
+            <!--<option value="0">All<span class="glyphicon glyphicon-triangle-bottom"></span></option>-->
+            <!--<option value="1">positive<span class="glyphicon glyphicon-triangle-bottom"></span></option>-->
+            <!--<option value="-1">negative<span class="glyphicon glyphicon-triangle-bottom"></span></option>-->
+          <!--</select>-->
+        </div>
+        <div class="keyword"></div>
+      </div>
+    </div>
+  </header>
+
+  <div class="row">
+    <div class="col-md-7">
+      <ul class="timeline hidden" id="article-panel">
+        <li><div class="tldate">Apr 2014</div></li>
+
+        <li>
+          <div class="tl-circ"></div>
+          <div class="timeline-panel">
+            <div class="tl-heading">
+              <h4>Surprising Headline Right Here</h4>
+              <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 3 hours ago</small></p>
+            </div>
+            <div class="tl-body">
+              <p>Lorem Ipsum and such.</p>
+            </div>
+          </div>
+        </li>
+
+        <li class="timeline-inverted">
+          <div class="tl-circ"></div>
+          <div class="timeline-panel">
+            <div class="tl-heading">
+              <h4>Breaking into Spring!</h4>
+              <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 4/07/2014</small></p>
+            </div>
+            <div class="tl-body">
+              <p>Hope the weather gets a bit nicer...</p>
+
+              <p>Y'know, with more sunlight.</p>
+            </div>
+          </div>
+        </li>
+
+        <li><div class="tldate">Mar 2014</div></li>
+
+        <li>
+          <div class="tl-circ"></div>
+          <div class="timeline-panel">
+            <div class="tl-heading">
+              <h4>New Apple Device Release Date</h4>
+              <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 3/22/2014</small></p>
+            </div>
+            <div class="tl-body">
+              <p>In memory of Steve Jobs.</p>
+            </div>
+          </div>
+        </li>
+        <li class="timeline-inverted">
+          <div class="timeline-panel">
+            <div class="tl-heading">
+              <h4>No icon here</h4>
+              <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 3/16/2014</small></p>
+            </div>
+            <div class="tl-body">
+              <p>Here you'll find some beautiful photography for your viewing pleasure, courtesy of <a href="./images/test.jpg">lorempixel</a>.</p>
+
+              <p><img src="./images/test.jpg" alt="lorem pixel"></p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="tl-circ"></div>
+          <div class="timeline-panel">
+            <div class="tl-heading">
+              <h4>Some Important Date!</h4>
+              <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 3/03/2014</small></p>
+            </div>
+            <div class="tl-body">
+              <p>Write up a quick summary of the event.</p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="timeline-panel noarrow">
+            <div class="tl-heading">
+              <h4>Secondary Timeline Box</h4>
+              <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 3/01/2014</small></p>
+            </div>
+            <div class="tl-body">
+              <p>This might be a follow-up post with related info. Maybe we include some extra links, tweets, user comments, photos, etc.</p>
+            </div>
+          </div>
+        </li>
+
+        <li><div class="tldate">Feb 2014</div></li>
+
+        <li class="timeline-inverted">
+          <div class="tl-circ"></div>
+          <div class="timeline-panel">
+            <div class="tl-heading">
+              <h4>The Winter Months</h4>
+              <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 02/23/2014</small></p>
+            </div>
+            <div class="tl-body">
+              <p>Gee time really flies when you're having fun.</p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="tl-circ"></div>
+          <div class="timeline-panel">
+            <div class="tl-heading">
+              <h4>Yeah we're pretty much done here</h4>
+              <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 02/11/2014</small></p>
+            </div>
+            <div class="tl-body">
+              <p>Wasn't this fun though?</p>
+            </div>
+          </div>
+        </li>
+      </ul>
+
+
+    </div>
+    <div class="col-md-5">
+      <div id="main" class="hidden" style="height:400px;border: 1px solid #5f9cd8;box-shadow: 0px 0px 5px #5f9cd8;border-radius: 3px;padding: 10px;"></div>
+      <div style="margin-top: 20px;"></div>
+      <div id="line" class="hidden" style="height:400px;border: 1px solid #ffa234;box-shadow: 0px 0px 5px #ffa234;border-radius: 3px;padding: 10px;"></div>
+    </div>
+  </div>
+  <div class="page hidden"></div>
+
+</div>
+</body>
+</html>
